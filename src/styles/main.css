@@ -8,3 +8,11 @@ h1 {
     text-align: center;
     color: red;
 }
+
+.logo {
+    background-image: url('../assets/webpack-logo.png');
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
