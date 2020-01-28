@@ -37,6 +37,10 @@ module.exports = {
                 test: /\.xml$/,
                 use: ['xml-loader'],
             },
+            {
+                test: /\.csv$/,
+                use: ['csv-loader'],
+            },
         ]
     }
 }
