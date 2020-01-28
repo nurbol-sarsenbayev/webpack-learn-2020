@@ -15,6 +15,10 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.json', '.css'],
+        alias: {
+            '@models': path.resolve(__dirname, 'src', 'models'),
+            '@': path.resolve(__dirname, 'src'),
+        },
     },
     plugins: [
         new HTMLWebpackPlugin({

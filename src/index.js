@@ -1,5 +1,5 @@
-import Post from './Post'
-import './styles/main'
+import Post from '@models/Post'
+import '@/styles/main'
 import json from './assets/json';
 import xml from './assets/data.xml';
 import csv from './assets/data.csv';
