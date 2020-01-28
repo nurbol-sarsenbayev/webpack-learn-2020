@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "watch": "webpack --mode development --watch"
+    "watch": "webpack --mode development --watch",
+    "start": "webpack-dev-server --mode development --open"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "style-loader": "^1.1.3",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
     "xml-loader": "^1.2.1"
   },
   "dependencies": {

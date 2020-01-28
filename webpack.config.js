@@ -31,6 +31,9 @@ module.exports = {
             chunks: 'all',
         },
     },
+    devServer: {
+        port: 4200,
+    },
     module: {
         rules: [
             {
