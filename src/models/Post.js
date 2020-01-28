@@ -8,6 +8,6 @@ export default class Post {
         return JSON.stringify({
             title: this.title,
             date: this.date.toJSON(),
-        })
+        }, null, 2)
     }
 }
