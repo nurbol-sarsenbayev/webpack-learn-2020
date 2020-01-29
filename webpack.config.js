@@ -30,8 +30,13 @@ const getFilenamePattern = (ext) => isDev ? `[name].${ext}` : `[name].[contentha
 
 const getCssLoaders = (extraLoader) => {
     const loaders = [
-        MiniCssExtractPlugin.loader,
-        'css-loader'
+        {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+                hmr: isDev,
+            },
+        },
+        'css-loader',
     ]
 
     if (extraLoader) {
@@ -80,6 +85,7 @@ module.exports = {
     optimization: optimization(),
     devServer: {
         port: 4200,
+        hot: isDev,
     },
     module: {
         rules: [
