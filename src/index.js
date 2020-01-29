@@ -7,6 +7,7 @@ import csv from './assets/data.csv';
 import WebpackLogo from './assets/webpack-logo.png'
 import './styles/main-less.less'
 import './styles/main-sass.scss'
+import './babel-test'
 
 const post = new Post('The webpack post')
 console.log(post.toString())
