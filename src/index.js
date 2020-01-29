@@ -19,3 +19,4 @@ $('pre').html(post.toString())
 
 import './typescript-test'
 import './react-test'
+import './react-ts-test'
