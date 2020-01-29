@@ -1,6 +1,6 @@
 import * as $ from 'jquery'
 import Post from '@models/Post'
-import '@/styles/main'
+import '@/styles/main.css'
 import json from './assets/json';
 import xml from './assets/data.xml';
 import csv from './assets/data.csv';
@@ -16,3 +16,5 @@ console.log('XML', xml)
 console.log('CSV', csv)
 console.log('WebpackLogo', WebpackLogo);
 $('pre').html(post.toString())
+
+import './typescript-test'
