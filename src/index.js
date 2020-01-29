@@ -6,6 +6,7 @@ import xml from './assets/data.xml';
 import csv from './assets/data.csv';
 import WebpackLogo from './assets/webpack-logo.png'
 import './styles/main-less.less'
+import './styles/main-sass.scss'
 
 const post = new Post('The webpack post')
 console.log(post.toString())

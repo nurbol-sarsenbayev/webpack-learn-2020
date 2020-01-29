@@ -1,0 +1,12 @@
+$color: darkred;
+
+.card {
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid $color;
+
+    h2 {
+        text-align: center;
+        color: $color;
+    }
+}
