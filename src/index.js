@@ -18,3 +18,4 @@ console.log('WebpackLogo', WebpackLogo);
 $('pre').html(post.toString())
 
 import './typescript-test'
+import './react-test'

@@ -58,7 +58,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
     },
     resolve: {
-        extensions: ['.js', '.json', '.ts'],
+        extensions: ['.js', '.json', '.ts', '.jsx'],
         alias: {
             '@models': path.resolve(__dirname, 'src', 'models'),
             '@': path.resolve(__dirname, 'src'),
@@ -97,6 +97,22 @@ module.exports = {
                     options: {
                         presets: [
                             '@babel/preset-env',
+                        ],
+                        plugins: [
+                            '@babel/plugin-proposal-class-properties',
+                        ],
+                    },
+                }
+            },
+            {
+                test: /\.jsx$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            '@babel/preset-env',
+                            '@babel/preset-react',
                         ],
                         plugins: [
                             '@babel/plugin-proposal-class-properties',
