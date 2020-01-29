@@ -26,6 +26,21 @@ const optimization = () => {
     return config
 }
 
+const getFilenamePattern = (ext) => isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`
+
+const getCssLoaders = (extraLoader) => {
+    const loaders = [
+        MiniCssExtractPlugin.loader,
+        'css-loader'
+    ]
+
+    if (extraLoader) {
+        loaders.push(extraLoader)
+    }
+
+    return loaders
+}
+
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
@@ -34,7 +49,7 @@ module.exports = {
         analytics: './analytics.js',
     },
     output: {
-        filename: '[name].[contenthash].js',
+        filename: getFilenamePattern('js'),
         path: path.resolve(__dirname, 'dist'),
     },
     resolve: {
@@ -59,7 +74,7 @@ module.exports = {
             },
         ]),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
+            filename: getFilenamePattern('css'),
         }),
     ],
     optimization: optimization(),
@@ -70,15 +85,15 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                use: getCssLoaders(),
             },
             {
                 test: /\.less$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
+                use: getCssLoaders('less-loader'),
             },
             {
                 test: /\.s[ac]ss$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+                use: getCssLoaders('sass-loader'),
             },
             {
                 test: /\.(jpg|jpeg|png|gif)$/,
