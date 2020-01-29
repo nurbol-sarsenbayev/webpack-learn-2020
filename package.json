@@ -9,6 +9,7 @@
     "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
   },
+  "browserslist": "> 0.25%, not dead",
   "keywords": [],
   "author": "",
   "license": "ISC",
