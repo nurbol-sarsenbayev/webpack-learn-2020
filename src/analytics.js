@@ -21,4 +21,6 @@ function createAnalytics() {
     }
 }
 
+let unusedVar = 'asd'
+
 window.analytics = createAnalytics();
