@@ -46,6 +46,26 @@ const getCssLoaders = (extraLoader) => {
     return loaders
 }
 
+const getBabelLoader = (presets) => {
+    const loader = {
+        loader: 'babel-loader',
+        options: {
+            presets: [
+                '@babel/preset-env',
+            ],
+            plugins: [
+                '@babel/plugin-proposal-class-properties',
+            ],
+        },
+    }
+
+    if (presets) {
+        loader.options.presets.push(...presets)
+    }
+
+    return loader
+}
+
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
@@ -92,66 +112,25 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            '@babel/preset-env',
-                        ],
-                        plugins: [
-                            '@babel/plugin-proposal-class-properties',
-                        ],
-                    },
-                }
+                use: getBabelLoader(),
             },
             {
                 test: /\.jsx$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            '@babel/preset-env',
-                            '@babel/preset-react',
-                        ],
-                        plugins: [
-                            '@babel/plugin-proposal-class-properties',
-                        ],
-                    },
-                }
+                use: getBabelLoader(['@babel/preset-react']),
             },
             {
                 test: /\.ts$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            '@babel/preset-env',
-                            '@babel/preset-typescript',
-                        ],
-                        plugins: [
-                            '@babel/plugin-proposal-class-properties',
-                        ],
-                    },
-                }
+                use: getBabelLoader(['@babel/preset-typescript']),
             },
             {
                 test: /\.tsx$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            '@babel/preset-env',
-                            '@babel/preset-react',
-                            '@babel/preset-typescript',
-                        ],
-                        plugins: [
-                            '@babel/plugin-proposal-class-properties',
-                        ],
-                    },
-                }
+                use: getBabelLoader([
+                    '@babel/preset-react',
+                    '@babel/preset-typescript',
+                ]),
             },
             {
                 test: /\.css$/,
