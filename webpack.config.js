@@ -73,6 +73,10 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
+                test: /\.less$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
+            },
+            {
                 test: /\.(jpg|jpeg|png|gif)$/,
                 use: ['file-loader'],
             },
