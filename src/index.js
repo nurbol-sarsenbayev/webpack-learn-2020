@@ -20,3 +20,9 @@ $('pre').html(post.toString())
 import './typescript-test'
 import './react-test'
 import './react-ts-test'
+
+setTimeout(() => {
+    import('lodash').then(() => {
+        console.log('loadash is loaded')
+    })
+}, 2000)
