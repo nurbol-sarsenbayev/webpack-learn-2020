@@ -22,7 +22,8 @@ import './react-test'
 import './react-ts-test'
 
 setTimeout(() => {
-    import('lodash').then(() => {
+    
+    import(/* webpackChunkName: "lodash" */ 'lodash').then(() => {
         console.log('loadash is loaded')
     })
 }, 2000)
